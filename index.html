@@ -59,10 +59,10 @@
             color: #111827;
         }
 
-        /* 2x2 Izgara (Her sayfada 4 soru) */
+        /* 1x2 Izgara (Her sayfada 2 soru) */
         .questions-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
             grid-template-rows: 1fr 1fr;
             gap: 10mm;
             height: 237mm; /* Sabit boyut: Taşmayı engeller (297 - 30 padding - 20 header) */
@@ -142,7 +142,7 @@
                 </button>
                 <button onclick="generatePDF()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all flex items-center justify-center w-full sm:w-auto">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    PDF Oluştur (2 Sayfa / 8 Soru)
+                    PDF Oluştur (4 Sayfa / 8 Soru)
                 </button>
             </div>
 
@@ -266,8 +266,8 @@
             const pdfContent = document.getElementById('pdf-content');
             pdfContent.innerHTML = ''; // Eski içeriği temizle
 
-            // Soruları 4'erli gruplara ayır
-            const QUESTIONS_PER_PAGE = 4;
+            // Soruları 2'şerli gruplara ayır
+            const QUESTIONS_PER_PAGE = 2;
             
             for (let i = 0; i < questions.length; i += QUESTIONS_PER_PAGE) {
                 const pageDiv = document.createElement('div');
